@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redsea-change-detection"
+version = "0.1.0"
+description = "Shallow-water change detection with a null model that decides whether the result is real."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hussein Fanjry" }]
+keywords = ["remote-sensing", "sentinel-2", "lyzenga", "change-detection", "coral-reef", "google-earth-engine"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: GIS",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "matplotlib>=3.6"]
+gee = ["earthengine-api>=0.1.380"]
+
+[project.urls]
+Repository = "https://github.com/GisHussein/redsea-change-detection"
+
+[tool.setuptools.packages.find]
+include = ["redsea*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
